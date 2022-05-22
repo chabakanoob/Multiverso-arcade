@@ -1,7 +1,6 @@
 import time
 import random
-
-
+###MINIJUEGO###
 def Minijuego_carrera():
     
     print("-->JUAJUAJUJUAJUA")
@@ -114,7 +113,6 @@ def Minijuego_carrera():
             if dañor > self.daño-3:
                 print("¡GOLPE CRÍTICO!, golpeas dos veces seguidas.")
                 print("""
-
                   _ ._  _ , _ ._
                 (_ ' ( `  )_  .__)
                ( (  (    )   `)  ) _)
@@ -123,7 +121,6 @@ def Minijuego_carrera():
                           ;   ;  
                          /   \\
     _____________/_ __ \_____________
-
     """)
                 time.sleep(1)
                 print("--> ARRGHH ¡MALDITA ESPONJA!")
@@ -372,22 +369,27 @@ def Minijuego_carrera():
         if v1.metros_r >=200:
             print("¡¡¡Enhorabuena!!! has llegado a la meta antes que el Holandes Errante :)")
             ganar()
+            return True
         
         elif holandes.metros_r >=200:
             print("El Holandes Errante ha llegado a la meta... :(")
             perder()
+            return False
 
         elif v1.gasolina <=0:
             print("Has perdido... Te has quedado sin aceite grasiento.")
             perder()
+            return False
             
         elif v1.resistencia <=0:
             print("El Holandes ha roto tu vehiculo... has perdido")
             perder()
+            return False
 
         elif holandes.resistencia <=0:
             print("¡Has tumbado el barco del Holandes Errante! Enhorabuena.")
             ganar()
+            return True
                 
 
 
@@ -453,22 +455,27 @@ def Minijuego_carrera():
         if v2.metros_r >=200:
             print("¡¡¡Enhorabuena!!! has ganado al Holandes Errante :)")
             ganar()
+            return True
         
         elif holandes.metros_r >=200:
             print("El Holandes Errante ha llegado a la meta... :(")
             perder()
+            return False
 
         elif v2.gasolina <=0:
             print("Has perdido... Te has quedado sin aceite grasiento.")
             perder()
+            return False
 
         elif v2.resistencia <=0:
             print("El Holandes ha roto tu vehiculo... has perdido.")
             perder()
+            return False
             
         elif holandes.resistencia <=0:
             print("¡Has tumbado el barco del Holandes Errante! Enhorabuena.")
             ganar()
+            return True
 
 
 
@@ -534,39 +541,27 @@ def Minijuego_carrera():
         if v3.metros_r >=200:
             print("¡¡¡Enhorabuena!!! has ganado al Holandes Errante :)")
             ganar()
+            return True
         
         elif holandes.metros_r >=200:
             print("El Holandes Errante ha llegado a la meta... :(")
             perder()
+            return False
             
         elif v3.gasolina <=0:
             print("Has perdido... Te has quedado sin aceite grasiento.")
             perder()
+            return False
 
         elif v3.resistencia <=0:
             print("El Holandes ha roto tu vehiculo... has perdido.")
             perder()
+            return False
             
         elif holandes.resistencia <=0:
             print("¡Has tumbado el barco del Holandes Errante! Enhorabuena.")
             ganar()
+            return True
 
                                                                                                                                                                                                                 ##      .--..--..--..--..--..--.
                                                                                                                                                                                                            ##    .' \  (`._   (_)     _   \
-print(Minijuego_carrera())                                                                                                                                                                                                              ##  .'    |  '._)         (_)  |
-                                                                                                                                                                                                                ##  \ _.')\      .----..---.   /
-                                                                                                                                                                                                                ##  |(_.'  |    /    .-\-.  \  |
-                                                                                                                                                                                                                ##  \     0|    |   ( O| O) | o|
-                                                                                                                                                                                                                ##   |  _  |  .--.____.'._.-.  |
-                                                                                                                                                                                                                ##   \ (_) | o         -` .-`  |
-                                                                                                                                                                                                                ##    |    \   |`-._ _ _ _ _\                                                                                                                                                                                                                ##    \    |   |  `. |_||_|   |
-                                                                                                                                                                                                                ##    | o  |    \_      \     |     -.   .-.
-                                                                                                                                                                                                                ##    |.-.  \     `--..-'   O|     `.`-' .'
-                                                                                                                                                                                                                ##  _.'  .' |     `-.-'      /-.__   ' .-'
-                                                                                                                                                                                                                ##.' `-.` '.|='=.='=.='=.='=|._/_ `-'.'
-                                                                                                                                                                                                                ##`-._  `.  |________/\_____|    `-.'
-                                                                                                                                                                                                                ##   .'   ).| '=' '='\/ '=' |
-                                                                                                                                                                                                                ##   `._.`  '---------------'
-                                                                                                                                                                                                                ##           //___\   //___\
-                                                                                                                                                                                                                ##             ||       ||
-                                                                                                                                                                                                                ##               ||_.-.   ||_.-.

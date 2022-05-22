@@ -114,7 +114,9 @@ def main():
                     jugador.bosses_derrotados +=1
                     ut.cargando()
                     print("\n\n\n\n\n\n     - - - - > Has conseguido acabar con el BOSS de esta dimension ! !")
-                    print("\n\n\n\n              - - - - >",jugador.nombre,"+100 PTS")
+                    time.sleep(3)
+                    print("\n\n\n\n              - - - - >",jugador.nombre,"+150 PTS")
+                    time.sleep(2)
                 else:
                     ut.cargando()
                     print("\n\n\n\n\n\n    - - - - > No has conseguido acabar con el BOSS de esta dimension  :( ")
@@ -125,9 +127,11 @@ def main():
 
         if len(ins.dimensiones) == 0:
             print("\n\n\n\n\n\n    - - - - > Enhorabuena -- Juego completado !")
+            print("\n\n\n                  - - - - > Nombre de Jugador : ",usuario)
             print("\n\n\n                  - - - - > puntos totales : ",jugador.puntos)
             print("\n\n\n                  - - - - > Enemigos derrotados : ",jugador.enemigos_derrotados)
             print("\n\n\n                  - - - - > Bosses derrotados : ",jugador.bosses_derrotados)
+            print("\n\n\n")
             try:
                 mys.subir_datos_partida(jugador.nombre,jugador.puntos,jugador.enemigos_derrotados,jugador.bosses_derrotados)
             except:
@@ -135,9 +139,11 @@ def main():
 
         else:
             print("\n\n\n\n\n\n    - - - - > Te rascaron,hasta aqui has llegado... !!")
+            print("\n\n\n                  - - - - > Nombre de Jugador : ",usuario)
             print("\n\n\n                  - - - - > puntos totales : ",jugador.puntos)
             print("\n\n\n                  - - - - > Enemigos derrotados : ",jugador.enemigos_derrotados)
             print("\n\n\n                  - - - - > Bosses derrotados : ",jugador.bosses_derrotados)
+            print("\n\n\n")
             try:
                 mys.subir_datos_partida(jugador.nombre,jugador.puntos,jugador.enemigos_derrotados,jugador.bosses_derrotados)
             except:

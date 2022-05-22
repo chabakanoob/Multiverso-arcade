@@ -2,7 +2,7 @@ import clases as cl
 import sonidos_pantallas as sp
 import utilidades as ut
 import random,time
-import minijuego_anastasia
+import minijuego_anastasia,minijuego_elis,minijuego_chechu,minijuego_muymio,minijuego_joan
 
 
 #Dimension C-137 
@@ -27,7 +27,7 @@ bola_de_nieve = cl.Mob("bola de nieve",100,5,5,50,10)
 
     #dimension
 
-dimension_c137 = cl.Dimension("C-137",[pistola_portales,espada_bacon,cuencas_de_ojos,parche_de_morty],[abradolf_lincler,asustadizo_terry,bola_de_nieve],minijuego_anastasia.main)
+dimension_c137 = cl.Dimension("C-137",[pistola_portales,espada_bacon,cuencas_de_ojos,parche_de_morty],[abradolf_lincler,asustadizo_terry,bola_de_nieve],minijuego_muymio.main)
 
 
     #Dimension Fondo de bikini
@@ -60,7 +60,7 @@ calamardo=cl.Mob("Calamardo",100,5,5,50,10)
 
 #dimension
 
-dimension_fondo_de_bikini = cl.Dimension("Fondo de bikini",[savia_gary, caza_medusas, espatula, bote_burbujas, cangreburguer, gafas],[patricio, arenita, placton, calamardo],minijuego_anastasia.main)
+dimension_fondo_de_bikini = cl.Dimension("Fondo de bikini",[savia_gary, caza_medusas, espatula, bote_burbujas, cangreburguer, gafas],[patricio, arenita, placton, calamardo],minijuego_chechu.Minijuego_carrera)
 
 
 
@@ -88,7 +88,7 @@ dark_rayman = cl.Mob('Rayma Oscuro',50,25,20,35,20)
 
 
 # ---------------------- dimension
-dimension_claro_de_los_sueños = cl.Dimension("El Claro de los Sueños", [ cohete_propulsor, hada_lagrimas, red_pot, yellow_pot, green_pot], [ hoodlum, dark_lum, dark_rayman ] ,minijuego_anastasia.main)
+dimension_claro_de_los_sueños = cl.Dimension("El Claro de los Sueños", [ cohete_propulsor, hada_lagrimas, red_pot, yellow_pot, green_pot], [ hoodlum, dark_lum, dark_rayman ] ,minijuego_joan.reflux)
 
         # Dimension Planet Express
 
@@ -133,7 +133,7 @@ Sara_t100 = cl.Mob("T-1000 SARAH",100,5,5,50,40)
 nominador = cl.Mob("El nominador",50,22.4,10,30,20)
 
 
-dimension_fol = cl.Dimension("Dimension FOL",[bomba_explosiva,mdma,gunatelete,cubo_perfecto,lanza_chas,],[folista,Sara_t100,nominador])
+dimension_fol = cl.Dimension("Dimension FOL",[bomba_explosiva,mdma,gunatelete,cubo_perfecto,lanza_chas,],[folista,Sara_t100,nominador],minijuego_elis.new_game)
 
         #jugadores
 
@@ -144,7 +144,7 @@ donut_envenenado = cl.Habilidades("Donut envenenado","veneno",(5,10),"donut de t
 golpe_borracho = cl.Habilidades("Golpe borracho","normal",(0,50),"golpe de tipo normal que puede quitar muy poco o mucho debido a la borrachera de homer")
 
 
-homero = cl.Jugador("homero",30,40,50,50,20,"Este jugador tiene habilidades muy variopintas y curiosas !","./recursos/manazas2.mp3",[bola_demolicion,donut_envenenado,golpe_borracho])
+homero = cl.Jugador("homero",10,40,50,50,20,"Este jugador tiene habilidades muy variopintas y curiosas !","./recursos/manazas2.mp3",[bola_demolicion,donut_envenenado,golpe_borracho])
 
         #hacker
 
@@ -169,7 +169,19 @@ brainstorming = cl.Habilidades('Lavado de cerebro', 'veneno', (3,5), 'envenena e
 golpe_random = cl.Habilidades("FINIQUITO TOTAL","normal",(0,50),"golpe de tipo normal que puede quitar yo que se el que...")
 golpe_finiquito = cl.Habilidades("Golpe de salario","normal", (15,30), " Golpe cargado de tipo normal que te quita vida y salario")
 
-nerd = cl.Jugador('Nerd', 100, 50, 40, 40, 30, 30, 'un libro en persona', './recursos/bearseatbeets.m4a', [brainstorming,golpe_random,golpe_finiquito])
+nerd = cl.Jugador('Nerd', 100, 50, 40, 40, 30,'un libro en persona', './recursos/mclovin.mp3', [brainstorming,golpe_random,golpe_finiquito])
+
+    #bob esponja
+
+##habilidades
+
+golpe_cubo = cl.Habilidades("Comida Podrida","veneno",(5,10),"Envenena a tu enemigo con comida del cubo de cebo, ¡puaaaaaj!")
+golpe_trucado = cl.Habilidades("¿Hay trampa?","normal",(0,50),"Ha bobesponja le ha crecido el brazo sorprendentemente, pero... no parece muy estable")
+golpe_ancla = cl.Habilidades("Golpe ancla","normal",(10,20),"¡Lenate de valor y zúrrale una buena a tu rival!")
+golpe_condimento = cl.Habilidades("Golpe condimento","normal",(10,20), "Disparale a tu oponente pero, con mucha salsa")
+
+bob = cl.Jugador("Bobesponja",100,30,34,100,100,"¡Este jugador es muy escurridizo, rápido y el mejor cocinero de todas las dimensiones!","./recursos/esponja_frase.mp3",[golpe_cubo, golpe_trucado, golpe_ancla, golpe_condimento])
+
 
 
 jugadores = [homero,hacker,bender,nerd]
@@ -205,11 +217,11 @@ def  mostrar_homero():
     Ataque : {}                                                                  .-"`"-.
                                                                                 /       \\                 
     Defensa : {}                                                                |   __  _|
-                                    ( 1 )                                       |  /  \/ \\             ░░███╗░ 
-    Precision : {}                                                             WW  \_o/_o/             ░████║░
-                                                                                (        _)            ██╔██║░
-    Velocidad : {}                                                              |   .----\\                ██║░░
-                                                                                ;  | '----'            ███████╗
+                                    ( 1 )                                       |  /  \/ \\             
+    Precision : {}                                                             WW  \_o/_o/             
+                                                                                (        _)            
+    Velocidad : {}                                                              |   .----\\                
+                                                                                ;  | '----'            
     Descripcion : {}   \__'--;`               ╚══════╝
                                                                                 |___/\|
 ---------------------------------------------------------------------------------------------
@@ -229,7 +241,7 @@ def mostrar_hacker():
                                                             ▄ ▀▀ ▀▀ ▄
     Ataque : {}                                           █           █
                                                         █               █
-    Defensa : {}                                      █                   █
+    Defensa : {}                ( 2 )                 █                   █
                                                     █    ▄▀▀▀█    █▀▀▀▄    █
     Precision : {}                                 █                        █
                                                  ▐▌      ▄▄    ▀▀▀    ▄▄     █
@@ -254,7 +266,7 @@ def mostrar_bender():
                                                                               H
     Ataque : {}                                                              _H_ 
                                                                          .-' -.-'-.
-    Defensa : {}                                                        /           \\
+    Defensa : {}                  ( 3 )                                 /           \\
                                                                         |            |
     Precision : {}                                                      |   .-------'._
                                                                         |  / /  '.' '. \\
@@ -283,11 +295,11 @@ def mostrar_nerd():
                                              /  _    |                                      _
     Defensa : {}                             #_/.\==/.\                                    | |
                                             (, \_/ \\_/                 _ __    ___ _ __ __| |
-    Precision : {}      ( 3 )                |    -' |                  | '_ \ / _ \ '__/ _` |
+    Precision : {}      ( 4 )                |    -' |                  | '_ \ / _ \ '__/ _` |
                                              \   '=  /                  | | | |  __/ | | (_| |
     Velocidad : {}                           /`-.__.'                   |_| |_|\___|_|  \__,_|  
                                           .-'`-.___|__ 
-    Descripcion : {}                     /    \       `. 
+    Descripcion : {}    /    \       `. 
     
 ---------------------------------------------------------------------------------------------
     '''.format(nerd.nombre,nerd.ataque,nerd.defensa,nerd.precision,nerd.velocidad,nerd.descripcion))
@@ -297,6 +309,33 @@ def mostrar_nerd():
     mihilo_mostrar_nerd.set_song(nerd.sonido)
     mihilo_mostrar_nerd.start()
     del mihilo_mostrar_nerd
+
+def mostrar_bob():
+    print("""
+
+---------------------------------------------------------------------------------------------
+
+        Nombre: {}                                                                                    
+                                                                                            .--..--..--..--..--..--.                                                                     
+        Ataque : {}                                                                  |(_.'  |    /    .-\-.  \   |
+                                                                                         \     0|    |   ( O| O)   |                                                                                                            
+        Defensa : {}                                                                  \ (_) | o         -` .-`   |
+                                      ( 5 )                                                  |    \   |`-._ _ _ _ _ \ /
+        Precision : {}                                                                  \    |   |  `. |_||_|     |
+                                                                                              | o  |    \_      \      |       
+        Velocidad : {}                                                                  |     \     `--..-'   O |  
+                                                                                                    |     `-.-'      /-.__         
+        Descripcion : {}
+        
+---------------------------------------------------------------------------------------------
+
+""". format(bob.nombre, bob.ataque, bob.defensa, bob.precision, bob.velocidad, bob.descripcion))
+    mihilo_mostrar_bob = sp.Songhilo_jugadores()
+    mihilo_mostrar_bob.set_song(bob.sonido)
+    mihilo_mostrar_bob.start()
+    del mihilo_mostrar_bob
+
+
 
 def elegir_jugador():
     ut.limpiar_pantalla()
@@ -318,6 +357,9 @@ def elegir_jugador():
     time.sleep(15)
 
     mostrar_nerd()
+    time.sleep(13)
+
+    mostrar_bob()
     time.sleep(5)
     print();print()
     while True:
@@ -331,5 +373,5 @@ def elegir_jugador():
             print("Solo numeros,no texto o otro tipo de caracteres...")
             time.sleep(1.5)
 
-# elegir_jugador() 
+
 

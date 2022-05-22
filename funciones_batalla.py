@@ -115,7 +115,7 @@ def check_duration_items(jugador):
 
 #funcion de utilizacion de items
 
-def usar_item(jugador):
+def usar_item(jugador,villano):
 
     okay = False
 
@@ -179,7 +179,19 @@ def usar_item(jugador):
 
         if item_seleccionado.tipo == "sk":
 
-            print("Vas a volver a golpear gracias a",item_seleccionado.nombre)
+            print("\n\n         - - - > Vas a volver a golpear gracias a",item_seleccionado.nombre)
+            time.sleep(2)
+
+            habilidad_user = elegir_habilidad(jugador)
+            
+            print("\n\n    - - - - > Has elegido la habilidad :",jugador.habilidades[habilidad_user].nombre)
+            time.sleep(2)
+
+            damage_user = usar_habilidad(jugador,villano,habilidad_user)
+
+            print("\n\n    - - - - > Woww ! ese golpe le ha quitado a",villano.nombre,damage_user,"puntos de vida")
+            time.sleep(1)
+
 
         # print(list(jugador.items.values())[0].nombre)
     else:
@@ -242,7 +254,7 @@ def fight(jugador,villano):
 
     sp.mihilo_fight_theme = sp.Songhilo()
     sp.mihilo_fight_theme.set_song("./recursos/lucha.mp3")
-    sp.mihilo_fight_theme.control_volumen(10)
+    sp.mihilo_fight_theme.control_volumen(5)
     sp.mihilo_fight_theme.start()
 
     huir = False
@@ -281,7 +293,7 @@ def fight(jugador,villano):
 
             elif action == 4:
                 
-                usar_item(jugador)
+                usar_item(jugador,villano)
                 time.sleep(3)
 
                 ut.limpiar_pantalla()
