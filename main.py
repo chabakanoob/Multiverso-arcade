@@ -7,14 +7,7 @@ import sonidos_pantallas as sp
 #importacion de modulos utiles
 import random,time,os
 
-#importacion de minijuegos de colaboradores
-import minijuego_anastasia as m_anastasia
 
-
-
-
-# time.sleep(2)
-# sp.mihilo_main_theme.stop_song()
 def main():
 
     sp.mihilo_main_theme.start()
