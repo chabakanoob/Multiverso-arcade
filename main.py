@@ -7,6 +7,10 @@ import sonidos_pantallas as sp
 #importacion de modulos utiles
 import random,time,os
 
+#importacion de minijuegos de colaboradores
+import minijuego_anastasia as m_anastasia
+
+
 
 
 # time.sleep(2)
@@ -53,6 +57,8 @@ def main():
 
                 ut.cargando()
 
+                fad.obtener_item(jugador,dimension_actual)
+
                 index_villano = random.randrange(0,len(dimension_actual.villanos)) #indice aleatorio para elegir villano aleatorio
                 villano_actual = dimension_actual.villanos[index_villano]
 
@@ -82,14 +88,14 @@ def main():
                     jugador.puntos +=100
                     jugador.enemigos_derrotados +=1
 
-                    print("\n\n\n\n\n\n    - - - - >",jugador.nombre," + 100 PTS !")
+                    print("\n\n\n\n\n\n                - - - - >",jugador.nombre," + 100 PTS !")
                     time.sleep(3)
 
                     del dimension_actual.villanos[index_villano]
 
                 elif ragnarok == 2:
                     ut.limpiar_pantalla()
-                    print("\n\n\n\n\n\n    - - - - > Has huido del combate ! vamos hacia otra dimension...")
+                    print("\n\n\n\n\n\n         - - - - > Has huido del combate ! vamos hacia otra dimension...")
                     time.sleep(2.5)
                     break
 
@@ -98,7 +104,23 @@ def main():
             if len(dimension_actual.villanos)==0:
                 print("\n\n\n\n\n\n     - - - - > Has derrotado a todos los villanos de esta dimension...\n")
                 time.sleep(4)
+                print("\n\n\n         - - - - > Pero ahora te toca el plato fuerte,el BOSS de la dimension...\n")
+                time.sleep(2)
+                print("\n\n\n                  - - - - > Buena suerte !")
                 ut.cargando()
+
+                if dimension_actual.boss():
+                    jugador.puntos +=150
+                    jugador.bosses_derrotados +=1
+                    ut.cargando()
+                    print("\n\n\n\n\n\n     - - - - > Has conseguido acabar con el BOSS de esta dimension ! !")
+                    print("\n\n\n\n              - - - - >",jugador.nombre,"+100 PTS")
+                else:
+                    ut.cargando()
+                    print("\n\n\n\n\n\n    - - - - > No has conseguido acabar con el BOSS de esta dimension  :( ")
+                    time.sleep(3)
+            
+
                 del ins.dimensiones[index_dimension]
 
         if len(ins.dimensiones) == 0:

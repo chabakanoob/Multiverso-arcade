@@ -53,7 +53,7 @@ def set_items(jugador):
 
                 jugador.items[items_aleatorios[eleccion].nombre] = items_aleatorios[eleccion]
 
-                print("\n\n\n       item",items_aleatorios[eleccion].nombre,"equipado con exito a",jugador.nombre)
+                print("\n\n\n        - - - > Item",items_aleatorios[eleccion].nombre,"equipado con exito a",jugador.nombre)
             
                 time.sleep(1.5)
                             
@@ -82,3 +82,25 @@ def que_jugador():
     print("\n\n    - - - - > Perfecto ! tu NICK es : ",nombreuser)
     time.sleep(1.5)
     return nombreuser
+
+def obtener_item(jugador,dimension):
+
+    posibilidad = random.randrange(0,2)
+
+    if posibilidad == 1:
+
+        while True:
+
+            try:
+                item_dimension = random.randrange(0,len(dimension.items))
+
+
+                if dimension.items[item_dimension].nombre not in jugador.items:
+                    jugador.items[dimension.items[item_dimension].nombre] = dimension.items[item_dimension]
+
+                    print("\n\n\n\n\n\n\n-----------------------------------------------------------------------------------------\n    - - - - > Vaya ! Que suerte,te acabas de encontrar con un item : ",dimension.items[item_dimension].nombre,"\n-----------------------------------------------------------------------------------------\n")
+                    time.sleep(3.5)
+                    break
+            except:
+                pass
+

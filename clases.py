@@ -3,11 +3,12 @@ import utilidades as ut
 
 class Dimension():
 
-    def __init__(self,nombre,items,villanos):
+    def __init__(self,nombre,items,villanos,boss):
         
         self.nombre = nombre
         self.items = items
         self.villanos = villanos
+        self.boss = boss
 
 
 class Items():
